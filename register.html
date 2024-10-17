@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation Portal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="Shortcut icon" href="welcome-removebg-preview.png" type="x-icon">
+</head>
+<body>
+    <section id="registration">
+        <div class="welcome">
+            <img src="welcome-removebg-preview.png" alt="Welcome" height="400" width="400" id="wel">
+        </div>
+        <div class="form-container">
+            <h1>Reservation</h1>
+        <form autocomplete="off">
+            <label for="name"> Name : </label>
+            <input type="text" id="name" ><br>
+            <label for="mobile"> Mobile Number : </label>
+            <input type="text" id="mobile"><br>
+            <label for="date"> Date of Reservation : </label>
+            <input type="date" id="date"><br>
+            <label for="seat"> No. of Seats : </label>
+            <input type="number" id="seat"><br>
+            
+        </form>
+        <button id="reg">Register</button>
+        <h2 id="resultshow"></h2>
+        </div>
+    </section>
+    <script>
+        let name=document.getElementById("name");
+        let mobile=document.getElementById("mobile");
+        let date=document.getElementById("date");
+        let seat=document.getElementById("seat");
+        let resultshow=document.getElementById("resultshow");
+        let reg=document.getElementById("reg");
+        reg.addEventListener("click",()=>{
+        if(name.value==="" || mobile.value==="" || date.value==="" || seat.value==="")
+        {
+            alert("One of the field is Empty ! ");
+        }
+        else if(mobile.value>=10000000000)
+        {
+            alert("Phone number is invalid ! ");
+        }
+        else if(seat.value>=100)
+        {
+            alert("Tastea has a maximum of 100 Seats only ! Make sure the entered number of seats if less than 100");
+        }
+        else
+        {
+            resultshow.innerHTML="Registration Successfull ! ! ! "
+           let timer=setTimeout(()=>{
+            resultshow.innerHTML=""
+           },1000)
+        }
+        })
+    </script>
+</body>
+</html>
